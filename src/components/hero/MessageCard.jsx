@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export function MessageCard({
@@ -26,13 +27,17 @@ export function MessageCard({
       )}
       style={{ animationDelay: `${delay}s` }}
     >
-      
       <div className="w-1 self-stretch rounded-full bg-brand-dark/40 dark:bg-white/30" />
 
-     
       <div className="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-white">
         {avatar ? (
-          <img src={avatar} alt={name} className="h-full w-full object-cover" />
+          <Image
+            src={avatar}
+            alt={name}
+            width={40}
+            height={40}
+            className="h-full w-full object-cover"
+          />
         ) : (
           <div className="grid h-full w-full place-items-center text-lg">
             😀
